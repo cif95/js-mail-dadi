@@ -44,22 +44,29 @@ let randomNumber = "";
 // ? cliccando sul bottone vengono generati due numeri random da 1 a 6, uno per il giocatore, uno per il computer
 startBtn.addEventListener( 'click', function() {
 	diceOutputElement.innerHTML = '';
-	userNumber = Math.floor(Math.random() * diceRange.length);
-	randomNumber = Math.floor(Math.random() * diceRange.length);
+	diceOutputElement.classList.remove('text-success', 'text-danger', 'text-secondary');
+	userNumber = Math.floor(Math.random() * diceRange.length) + 1;
+	randomNumber = Math.floor(Math.random() * diceRange.length) + 1;
+
+	// * vince il numero più grande :
+
 	if ( userNumber > randomNumber ) {
 		diceOutputElement.append( `
-		Your number: ${userNumber},
+		Your number: ${userNumber}, 
 		my number: ${randomNumber} 
 		-> You Win! :)` );
+		diceOutputElement.classList.add('text-success');
 	} else if ( userNumber < randomNumber ) {
 		diceOutputElement.append( `
 		Your number: ${userNumber}, 
 		my number: ${randomNumber}  
 		-> You Lose! :(`);
+		diceOutputElement.classList.add('text-danger');
 	} else {
 		diceOutputElement.append( `
 		Your number: ${userNumber}, 
 		my number: ${randomNumber} 
 		-> Draw` );
+		diceOutputElement.classList.add('text-secondary');
 	}
 })
