@@ -16,12 +16,15 @@ const mailCheckOutputElement = document.querySelector('p#mail-output');
 for ( let i = 0 ; i < emailList.length ; i++) {
 
 	// ? condizione = è presente ?  
-	
+	mailCheckOutputElement.innerHTML = '';
+	mailCheckOutputElement.classList.remove('text-success', 'text-danger');
+
 	if ( userEmail == (emailList[i]) ) {   // ? - si (mostra messaggio positivo)
-		console.log('match found')
-		mailCheckOutputElement.append('match found');
+		mailCheckOutputElement.append('Accesso autorizzato');
+		mailCheckOutputElement.classList.add('text-success');
 	} else {                               // ? - no ( mostra messaggio negativo)
-		console.log('match not found');
+		mailCheckOutputElement.append('Accesso non autorizzato');
+		mailCheckOutputElement.classList.add('text-danger');
 	}
 }
 
