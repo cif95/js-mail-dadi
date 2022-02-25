@@ -1,36 +1,61 @@
-// Mail
-// Chiedi all’utente la sua email,
-// controlla che sia nella lista di chi può accedere,
-// stampa un messaggio appropriato sull’esito del controllo.
-
 // ? chiedere all'utente il suo indirizzo email (prompt);
-// ? assegnarlo ad una nuova variabile;
-// ? creare un array che contenga una lista di email;
-// ? controllare se la mail inserita dall'utente sia presente nell'array; ( con ciclo for );
-// ? condizione = è presente ? - si (mostra messaggio positivo) - no ( mostra messaggio negativo);
+// ? assegnarlo ad una nuova variabile :
 
 const userEmail = prompt('Inserisci la tua mail');
+
+// ? creare un array che contenga una lista di email :
+
 const emailList = ['jehege7861@libero.it', 'mrti11@hotmail.it', 'duneissausefe-7721@gmail.com', 'alessio.rossi@gmail.com'];
-const outputElement = document.querySelector('p#output');
+const mailCheckOutputElement = document.querySelector('p#mail-output');
+
+
+// ? controllare se la mail inserita dall'utente è presente nell'array; ( con ciclo for ) :
 
 for ( let i = 0 ; i < emailList.length ; i++) {
-	if ( userEmail == (emailList[i]) ) {
-		console.log('Accesso autorizzato')
-		outputElement.append('Accesso autorizzato');
-	} else {
+
+	// ? condizione = è presente ?  
+	
+	if ( userEmail == (emailList[i]) ) {   // ? - si (mostra messaggio positivo)
+		console.log('match found')
+		mailCheckOutputElement.append('match found');
+	} else {                               // ? - no ( mostra messaggio negativo)
 		console.log('match not found');
 	}
 }
 
 
-// Gioco dei dadi
-// Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-// Stabilire il vincitore, in base a chi fa il punteggio più alto.
-// Consigli generali
-// Prima di partire a scrivere codice poniamoci qualche domanda: Che ci sia un array da qualche parte? Se dobbiamo confrontare qualcosa che "cosa" ci serve?
+
 // ? creare un input button
-// ? cliccando sul bottone viene generato un numero random ( da 1 a 6, sia per il giocatore, sia per il computer );
-// ? confrontare i due numeri random -> il numero più alto vince
+// ? associare il button ad una nuova variabile :
+
+const startBtn = document.getElementById('start-btn');
+
+// ? associare ad una nuova variabile l'element dom per l'output del risultato :
+
+const diceOutputElement = document.querySelector('p#dice-output');
+
+// ? cliccando sul bottone vengono generati due numeri random da 1 a 6, uno per il giocatore, uno per il computer
+
+startBtn.addEventListener( 'click', function() {
+	const userNumber = Math.floor( Math.random() * 6 ) + 1;
+	console.log(userNumber);
+	const randomNumber = Math.floor( Math.random() * 6 ) + 1;
+	console.log(randomNumber);
+	// ? confrontare i due numeri random -> il numero più alto vince
+	if ( userNumber > randomNumber ) {
+		diceOutputElement.append('You Win! :)');
+	} else if ( userNumber < randomNumber ) {
+		diceOutputElement.append('You Lose! :(');
+	} else {
+		diceOutputElement.append('Draw');
+	}
+})
+
+
+
+
+
+
 
 
 
