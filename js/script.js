@@ -1,3 +1,5 @@
+// * mail check exercise
+
 // ? chiedere all'utente il suo indirizzo email (prompt);
 // ? assegnarlo ad una nuova variabile :
 
@@ -24,38 +26,40 @@ for ( let i = 0 ; i < emailList.length ; i++) {
 }
 
 
-
+// * roll the dice exercise
 // ? creare un input button
 // ? associare il button ad una nuova variabile :
 
 const startBtn = document.getElementById('start-btn');
 
 // ? associare ad una nuova variabile l'element dom per l'output del risultato :
-
 const diceOutputElement = document.querySelector('p#dice-output');
 
-// ? cliccando sul bottone vengono generati due numeri random da 1 a 6, uno per il giocatore, uno per il computer
+ // ? creo un array composto da numeri da 1 a 6
+const diceRange = [1, 2, 3, 4, 5, 6];
 
+let userNumber = "";
+let randomNumber = "";
+
+// ? cliccando sul bottone vengono generati due numeri random da 1 a 6, uno per il giocatore, uno per il computer
 startBtn.addEventListener( 'click', function() {
-	const userNumber = Math.floor( Math.random() * 6 ) + 1;
-	console.log(userNumber);
-	const randomNumber = Math.floor( Math.random() * 6 ) + 1;
-	console.log(randomNumber);
-	// ? confrontare i due numeri random -> il numero più alto vince
+	diceOutputElement.innerHTML = '';
+	userNumber = Math.floor(Math.random() * diceRange.length);
+	randomNumber = Math.floor(Math.random() * diceRange.length);
 	if ( userNumber > randomNumber ) {
-		diceOutputElement.append('You Win! :)');
+		diceOutputElement.append( `
+		Your number: ${userNumber},
+		my number: ${randomNumber} 
+		-> You Win! :)` );
 	} else if ( userNumber < randomNumber ) {
-		diceOutputElement.append('You Lose! :(');
+		diceOutputElement.append( `
+		Your number: ${userNumber}, 
+		my number: ${randomNumber}  
+		-> You Lose! :(`);
 	} else {
-		diceOutputElement.append('Draw');
+		diceOutputElement.append( `
+		Your number: ${userNumber}, 
+		my number: ${randomNumber} 
+		-> Draw` );
 	}
 })
-
-
-
-
-
-
-
-
-
