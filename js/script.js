@@ -20,10 +20,10 @@ for ( let i = 0 ; i < emailList.length ; i++) {
 	mailCheckOutputElement.classList.remove('text-success', 'text-danger');
 
 	if ( userEmail == (emailList[i]) ) {   // ? - si (mostra messaggio positivo)
-		mailCheckOutputElement.append('Accesso autorizzato');
+		mailCheckOutputElement.append('Welcome!');
 		mailCheckOutputElement.classList.add('text-success');
 	} else {                               // ? - no ( mostra messaggio negativo)
-		mailCheckOutputElement.append('Accesso non autorizzato');
+		mailCheckOutputElement.append('Access denied');
 		mailCheckOutputElement.classList.add('text-danger');
 	}
 }
@@ -57,13 +57,13 @@ startBtn.addEventListener( 'click', function() {
 		diceOutputElement.append( `
 		Your number: ${userNumber}, 
 		my number: ${randomNumber} 
-		-> You Win! :)` );
+		-> You Win! : )` );
 		diceOutputElement.classList.add('text-success');
 	} else if ( userNumber < randomNumber ) {
 		diceOutputElement.append( `
 		Your number: ${userNumber}, 
 		my number: ${randomNumber}  
-		-> You Lose! :(`);
+		-> You Lose! : (`);
 		diceOutputElement.classList.add('text-danger');
 	} else {
 		diceOutputElement.append( `

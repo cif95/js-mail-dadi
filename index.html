@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +12,26 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet"> 
 	<!-- custom style -->
 	<link rel="stylesheet" href="css/style.css">
-	<title>Mail + Dadi</title>
+	<title>Mail check + Roll the dice</title>
 </head>
 <body>
 	<main>
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col p-5">
-					<p id="mail-output"></p>
-					<button id="start-btn" type="button" class="btn btn-danger">Roll the dice</button>
-					<p id="dice-output" class="fw-bold fs-3"></p>
+			<div class="row justify-content-center align-items-center my-100vh">
+				<div class="col-8 p-5 text-center fw-bold text-white">
+					<section id="mail-check" class="my-border-red rounded-3 py-5 my-light-bg">
+						<h2>Authentication</h2>
+						<p id="mail-output" class="my-0"></p>
+					</section>
+					<section id="roll-the-dice" class="my-border-red rounded-3 py-5 my-light-bg">
+						<h2 class="pb-5">Wish you.. good luck!</h2>
+						<button id="start-btn" type="button" class="my-dice-btn position-relative fw-bold">
+							Roll the dice!
+							<div class="dice-face-element position-absolute top-0 start-0 m-2"></div>
+							<div class="dice-face-element position-absolute bottom-0 end-0 m-2"></div>
+						</button>
+						<p id="dice-output" class="fs-4"></p>
+					</section>				
 				</div>
 			</div>
 		</div>

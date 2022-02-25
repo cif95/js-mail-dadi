@@ -1,0 +1,33 @@
+body{
+	font-family: 'Raleway';
+	background-color: indianred;
+}
+
+.my-border-red{
+	border:1px solid indianred;
+}
+
+.my-100vh{
+	height:100vh;
+}
+
+.my-light-bg{
+	background-color: rgba(255, 255, 255, 0.548);
+}
+
+.my-dice-btn{
+	height:200px;
+	width:200px;
+	background-color: beige;
+	border-radius:20px;
+	margin-bottom:3rem;
+	box-shadow: 0px 15px 20px 5px rgb(77, 77, 77);
+}
+
+.dice-face-element{
+	height:40px;
+	width:40px;
+	border-radius:18px;
+	background-color: black;
+	box-shadow: 0px 0px 3px 1px rgb(117, 117, 117);
+}
